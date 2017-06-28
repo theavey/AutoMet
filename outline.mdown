@@ -6,83 +6,87 @@ Ideally, this will be as general as possible, but I'll start with running in GRO
 
 Setup:
 
-    - methods
-        - add molecule
-        - add solvent
-        - define CV
-        - define restraints
-        - create plumed input
-        - compile tpr
-        - minimize
-        - equilibrate
-        - log (commands, input and output from MD)
-    - data
-        - molecules
-            (might be good to just have file names here)
-            - composition (atoms, bonds)
-                For example, a .gro file
-            - coordinates
-                also contained in a .gro file
-            - parameters
-                often in .itp, .prm, .top
-        - restraints
-        - CVs
-        - executable paths
-        - execution parameters
+- methods
+    - add molecule
+    - parameterize molecule
+    - add molecule parameters
+    - combine molecules
+      This would involve ensuring no clashes, possibly arranging, and combining parameter inputs
+    - add solvent
+    - define CV
+    - define restraints
+    - create plumed input
+    - compile tpr
+    - minimize
+    - equilibrate
+    - log (commands, input and output from MD)
+- data
+    - molecules
+        (might be good to just have file names here)
+        - composition (atoms, bonds)
+            For example, a .gro file
+        - coordinates
+            also contained in a .gro file
+        - parameters
+            often in .itp, .prm, .top
+    - restraints
+    - CVs
+    - executable paths
+    - execution parameters
 
 
 Running:
 
-    - methods
-        - define restraints
-        - define CVs
-        - define metad parameters
-        - define MD parameters
-          Not sure if there is some general way to do this.
-          Ideally, it could just set any parameter by changing the default in some template file.
-          An extension (with a lot of work) could be to even check validity of this.
-          Likely easiest (with generality), would be to have a dict of parameters to change,
-          scan through template, and change any that have values set in the dict.
-          [ ] check on how GromacsWrapper does this.
-            - set length
-            - set log frequency and style
-            - set temp
-            - set others?
-        - compile TPR
-        - create plumed input
-        - run metad
-        - check status
-        - extend job
-        - resume job
-        - redo
-    - data
+- methods
+    - define restraints
+    - define CVs
+    - define metad parameters
+    - define MD parameters
+      Not sure if there is some general way to do this.
+      Ideally, it could just set any parameter by changing the default in some template file.
+      An extension (with a lot of work) could be to even check validity of this.
+      Likely easiest (with generality), would be to have a dict of parameters to change,
+      scan through template, and change any that have values set in the dict.
+      - [ ] check on how GromacsWrapper does this.
+        - set length
+        - set log frequency and style
+        - set temp
+        - set others?
+    - compile TPR
+    - create plumed input
+    - run metad
+    - check status
+    - extend job
+    - resume job
+    - redo
+- data
+    - starting geom
+    - trajectory (MDAnalysis.Universe likely)
+    - restraints
+    - CVs
+    - MD parameters
+    - status of job
+        - done
+        - running
+        - not running or done
+        - not started
+    - file names
         - starting geom
-        - trajectory (MDAnalysis.Universe likely)
-        - restraints
-        - CVs
-        - MD parameters
-        - status of job
-            - done
-            - running
-            - not running or done
-            - not started
-        - file names
-            - starting geom
-            - mdp
-            - tpr
-            - output files from GROMACS
-            - output files from PLUMED
-            - PLUMED inopu
+        - mdp
+        - tpr
+        - output files from GROMACS
+        - output files from PLUMED
+        - PLUMED input
 
 Analysis:
 
 A lot of this might need to be specialized, so easy access to MDAnalysis interface might be helpful
 
-    - methods
-        - sum hills
-        - make FES
-            - make 1d fes
-            - make 2d fes
-    - data
-        - trajectory
-        - file names
+- methods
+    - sum hills
+    - make FES
+        - make 1d fes
+        - make 2d fes
+- data
+    - trajectory
+    - file names
