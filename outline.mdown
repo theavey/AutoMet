@@ -22,6 +22,12 @@ Ideally, this will be as general as possible, but I'll start with running in GRO
 Setup:
 
 - methods
+    - save object state
+
+      A method that will save the state of the object so that, for example, if a simulation is set up and started,
+      but the python kernel is killed, all the parameters and such can be read back in easily for continuation
+      or extension, etc.
+    - read object state
     - add molecule
     - parameterize molecule
     - add molecule parameters
@@ -78,6 +84,7 @@ Running:
     - extend job
     - resume job
     - redo
+    - log
 - data
     - starting geom
     - trajectory (MDAnalysis.Universe likely)
