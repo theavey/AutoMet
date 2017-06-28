@@ -1,4 +1,5 @@
-License GPL v > 2
+License GPL v3.0
+
 This package will define a class that will be useful for setting up and running metadynamics calculations.
 
 Ideally, this will be as general as possible, but I'll start with running in GROMACS with PLUMED.
@@ -11,6 +12,7 @@ Setup:
     - parameterize molecule
     - add molecule parameters
     - combine molecules
+
       This would involve ensuring no clashes, possibly arranging, and combining parameter inputs
     - add solvent
     - define CV
@@ -42,9 +44,12 @@ Running:
     - define CVs
     - define metad parameters
     - define MD parameters
+
       Not sure if there is some general way to do this.
+
       Ideally, it could just set any parameter by changing the default in some template file.
       An extension (with a lot of work) could be to even check validity of this.
+
       Likely easiest (with generality), would be to have a dict of parameters to change,
       scan through template, and change any that have values set in the dict.
       - [ ] check on how GromacsWrapper does this.
