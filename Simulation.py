@@ -80,7 +80,7 @@ class Simulation(object):
         """
         raise NotImplementedError
 
-    def add_molectule_params(self, param_names):
+    def add_molecule_params(self, param_names):
         """
         Add parameter files for a molecule already added to the simulation.
 
