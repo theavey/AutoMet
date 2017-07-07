@@ -1,4 +1,4 @@
-"""\
+"""
 Defines the Simulation class for setting up containing information on a
 metadynamics simulation.
 
@@ -121,3 +121,4 @@ class Simulation(object):
         :param kappa:
         :return:
         """
+        raise NotImplementedError
