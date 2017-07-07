@@ -18,6 +18,7 @@ This package will define a class that will be useful for setting up and running 
 
 Ideally, this will be as general as possible, but I'll start with running in GROMACS with PLUMED.
 
+### Simulation Class
 
 Setup:
 
@@ -29,12 +30,18 @@ Setup:
       or extension, etc.
     - read object state
     - add molecule
-    - parameterize molecule
-    - add molecule parameters
+
+      Looks like the parmed package will be usable here.
+      It already has a `Structure` class the includes atoms, residues, bonds, angles, torsions, etc.
+      and it can take in and output a wide away of formats which is ideal.
     - combine molecules
 
       This would involve ensuring no clashes, possibly arranging, and combining parameter inputs
     - add solvent
+    - save molecule(s)
+
+      Write appropriate geometry and parameter files.
+      This will be necessary to start simulations.
     - define CV
     - define restraints
     - create plumed input
@@ -43,14 +50,7 @@ Setup:
     - equilibrate
     - log (commands, input and output from MD)
 - data
-    - molecules
-        (might be good to just have file names here)
-        - composition (atoms, bonds)
-            For example, a .gro file
-        - coordinates
-            also contained in a .gro file
-        - parameters
-            often in .itp, .prm, .top
+    - Structures
     - restraints
     - CVs
     - executable paths
@@ -116,3 +116,7 @@ A lot of this might need to be specialized, so easy access to MDAnalysis interfa
 - data
     - trajectory
     - file names
+
+
+### Molecule Class
+
