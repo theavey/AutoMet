@@ -24,24 +24,20 @@ Setup:
 
 - methods
     - save object state
-
-      A method that will save the state of the object so that, for example, if a simulation is set up and started,
+          - A method that will save the state of the object so that, for example, if a simulation is set up and started,
       but the python kernel is killed, all the parameters and such can be read back in easily for continuation
       or extension, etc.
     - read object state
     - add molecule
-
-      Looks like the parmed package will be usable here.
+          - Looks like the parmed package will be usable here.
       It already has a `Structure` class the includes atoms, residues, bonds, angles, torsions, etc.
       and it can take in and output a wide away of formats which is ideal.
     - combine molecules
-
-      This would involve ensuring no clashes, possibly arranging, and combining parameter inputs
+          - This would involve ensuring no clashes, possibly arranging, and combining parameter inputs
     - add solvent
     - save molecule(s)
-
-      Write appropriate geometry and parameter files.
-      This will be necessary to start simulations.
+          - Write appropriate geometry and parameter files.
+          - This will be necessary to start simulations.
     - define CV
     - define restraints
     - create plumed input
@@ -64,13 +60,10 @@ Running:
     - define CVs
     - define metad parameters
     - define MD parameters
-
-      Not sure if there is some general way to do this.
-
-      Ideally, it could just set any parameter by changing the default in some template file.
-      An extension (with a lot of work) could be to even check validity of this.
-
-      Likely easiest (with generality), would be to have a dict of parameters to change,
+          - Not sure if there is some general way to do this.
+          - Ideally, it could just set any parameter by changing the default in some template file.
+          - An extension (with a lot of work) could be to even check validity of this.
+          - Likely easiest (with generality), would be to have a dict of parameters to change,
       scan through template, and change any that have values set in the dict.
       - [ ] check on how GromacsWrapper does this.
         - set length
