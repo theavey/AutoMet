@@ -30,7 +30,7 @@ Setup:
     - read object state
     - add molecule
         - Looks like the parmed package will be usable here.
-      It already has a `Structure` class the includes atoms, residues, bonds, angles, torsions, etc.
+      It already has a `Structure` class that includes atoms, residues, bonds, angles, torsions, etc.
       and it can take in and output a wide away of formats which is ideal.
     - combine molecules
         - This would involve ensuring no clashes, possibly arranging, and combining parameter inputs
