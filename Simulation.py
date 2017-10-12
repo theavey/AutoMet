@@ -108,6 +108,8 @@ class Simulation(object):
         """
         Define a collective variable for either metadynamics or restraint.
 
+        # This will not be implemented in initial versions.
+
         :return:
         """
         raise NotImplementedError
@@ -115,6 +117,8 @@ class Simulation(object):
     def add_restraint(self, cv, value, kappa):
         """
         Restrain simulation along given CV with given parameters
+
+        # This will not be implemented in initial versions.
 
         :param cv:
         :param value:
