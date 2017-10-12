@@ -1,4 +1,4 @@
-This package will define a class that will be useful for setting up and running metadynamics calculations.
+This package will define a class that will be useful for setting up and running molecular dynamics calculations.
 Copyright (C) 2017 Thomas John Heavey IV
 
 This program is free software: you can redistribute it and/or modify
@@ -14,9 +14,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-This package will define a class that will be useful for setting up and running metadynamics calculations.
+This package will define a class that will be useful for setting up and running molecular dynamics calculations.
 
-Ideally, this will be as general as possible, but I'll start with running in GROMACS with PLUMED.
+Ideally, this will be as general as possible, but I'll start with running in GROMACS.
 
 ### Simulation Class
 
@@ -38,9 +38,6 @@ Setup:
     - save molecule(s)
         - Write appropriate geometry and parameter files.
         - This will be necessary to start simulations.
-    - define CV
-    - define restraints
-    - create plumed input
     - compile tpr
     - minimize
     - equilibrate
@@ -48,7 +45,6 @@ Setup:
 - data
     - Structures
     - restraints
-    - CVs
     - executable paths
     - execution parameters
 
@@ -56,9 +52,6 @@ Setup:
 Running:
 
 - methods
-    - define restraints
-    - define CVs
-    - define metad parameters
     - define MD parameters
         - Not sure if there is some general way to do this.
         - Ideally, it could just set any parameter by changing the default in some template file.
@@ -71,8 +64,7 @@ Running:
           - set temp
           - set others?
     - compile TPR
-    - create plumed input
-    - run metad
+    - run simulation
     - check status
     - extend job
     - resume job
@@ -81,8 +73,6 @@ Running:
 - data
     - starting geom
     - trajectory (MDAnalysis.Universe likely)
-    - restraints
-    - CVs
     - MD parameters
     - status of job
         - done
@@ -94,15 +84,12 @@ Running:
         - mdp
         - tpr
         - output files from GROMACS
-        - output files from PLUMED
-        - PLUMED input
 
 Analysis:
 
-A lot of this might need to be specialized, so easy access to MDAnalysis interface might be helpful
+A lot of this might need to be specialized, so easy access to MDAnalysis interface will be helpful
 
 - methods
-    - sum hills
     - make FES
         - make 1d fes
         - make 2d fes
